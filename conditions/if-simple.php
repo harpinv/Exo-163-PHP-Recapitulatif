@@ -18,7 +18,7 @@ echo "<br><br>";
 /*###############################################*/
 /*################# ACTIVITÉS ###################*/
 /*###############################################*/
-// Écrire la condition qui affiche "Non" quand $chat vaut "Chien" et affiche "Oui" quand $chat vaut "Chat" ###//
+// Écrire la condition qui affiche "Non" quand $chat vaut "Chien" et affiche "Oui" quand $animal vaut "Chat" ###//
 $animal = "Chien";
 echo "2.Est-ce un chat : ";
 //mettre votre code ici
