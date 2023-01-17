@@ -118,17 +118,18 @@ echo '<br><br>';
 //Créer un tableau pour les mois de l'année et affiché tous les mois de Janvier à Décembre
 //modifier et/ou remplacer les éléments ci-dessous
 echo "8.Les mois depuis le debut de l'annee : <br>";
-$mois = [];
-for ($i = 0; $i < 0; $i) {
-    echo '';
+$mois = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+for ($i = 0; $i < 12; $i++) {
+    echo $mois[$i];
 }
 echo '<br><br>';
 
 //Afficher les mois de la fin de l'année jusqu'au début de l'année
 //modifier et/ou remplacer les éléments ci-dessous
 echo "9.Les mois depuis la fin de l'annee : <br>";
-for ($i = 0; $i < 0; $i) {
-    echo '';
+$mois = array_reverse($mois);
+for ($i = 0; $i < 12; $i++) {
+    echo $mois[$i];
 }
 echo '<br><br>';
 
@@ -158,6 +159,12 @@ $college = array(
 
 echo '10.Les eleves du college : <br>';
 //ajoutez votre code ici
+foreach ($college as $class) {
+    foreach ($class as $eleve) {
+        echo $eleve['Nom'] . " " . $eleve['Prenom'];
+    }
+}
+
 echo '<br><br>';
 
 //----------------------------------------
@@ -165,6 +172,39 @@ echo '<br><br>';
 //reprenez le tableau ci-dessus, ajoutez des éléves pour la classe de troisième et réaffichez tout
 echo '11.Les eleves du college (avec les nouveaux arrivants): <br>';
 //ajoutez votre code ici
+
+$college = array(
+    'Sixieme' => array(
+        array('Nom' => 'Payet', 'Prenom' => 'Mickael'),
+        array('Nom' => 'Hoareau', 'Prenom' => 'Christine'),
+        array('Nom' => 'Maillot', 'Prenom' => 'Laure'),
+    ),
+    'Cinquieme' => array(
+        array('Nom' => 'Bourdon', 'Prenom' => 'Didier'),
+        array('Nom' => 'Legitimus', 'Prenom' => 'Pascal'),
+        array('Nom' => 'Campan', 'Prenom' => 'Bernard'),
+        array('Nom' => 'Fois', 'Prenom' => 'Marina'),
+        array('Nom' => 'Floresti', 'Prenom' => 'Florence'),
+    ),
+    'Quatrieme' => array(
+        array('Nom' => 'Willis', 'Prenom' => 'Bruce'),
+        array('Nom' => 'Lawrence', 'Prenom' => 'Laurence'),
+        array('Nom' => 'Johannson', 'Prenom' => 'Scarlett'),
+        array('Nom' => 'Jackson', 'Prenom' => 'Samuel'),
+    ),
+    'Troisième' => array(
+        array('Nom' => 'Moufle', 'Prenom' => 'Bill'),
+        array('Nom' => 'Wrapen', 'Prenom' => 'Olivier'),
+        array('Nom' => 'Cirque', 'Prenom' => 'Ginette'),
+        array('Nom' => 'Porçons', 'Prenom' => 'Victor'),
+    ),
+);
+
+foreach ($college as $class) {
+    foreach ($class as $eleve) {
+        echo $eleve['Nom'] . " " . $eleve['Prenom'];
+    }
+}
 echo '<br><br>';
 
 //----------------------------------------
@@ -202,10 +242,48 @@ $videotheque = array(
       	'Henry Fonda','Martin Balsam','John Fiedler','Lee J. Cobb','E.G. Marshall',
     ),
   ),
+    array(
+        'nom' => 'le loup du dimanche',
+        'date' => 1999,
+        'realisateur' => 'pipe nine',
+        'acteurs' => array(
+            'Henry Fonda','Martin Balsam','John Fiedler','Lee J. Cobb','E.G. Marshall',
+        ),
+    ),
+    array(
+        'nom' => 'le corbeau',
+        'date' => 2012,
+        'realisateur' => 'Bob le blue',
+        'acteurs' => array(
+            'Henry Fonda','Martin Balsam','John Fiedler','Lee J. Cobb','E.G. Marshall',
+        ),
+    ),
+    array(
+        'nom' => 'soleil et une ordure',
+        'date' => 2008,
+        'realisateur' => 'Lili vert',
+        'acteurs' => array(
+            'Henry Fonda','Martin Balsam','John Fiedler','Lee J. Cobb','E.G. Marshall',
+        ),
+    ),
 );
 
 echo '12.Mes films : <br>';
 //ajoutez votre code ici
+foreach ($videotheque as $film) {
+    foreach ($film as $propriete => $valeur) {
+        if (is_array($valeur)){
+            echo "acteur : ";
+            foreach ($valeur as $acteurs){
+                echo $acteurs . " ";
+            }
+            echo "<br><br>";
+        }else{
+            echo $propriete . " : " . $valeur . "<br>";
+        }
+    }
+}
+
 echo '<br><br>';
 
 //----------------------------------------
